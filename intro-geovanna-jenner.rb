@@ -51,18 +51,42 @@ p "#{first_name} likes to listen to music."
 # Create a variable that contains a string and test some of the Ruby string methods
 # .upcase
 butterfly = 'butterfly'
+p butterfly.upcase
 
+
+p butterfly.reverse
 # .reverse
 
-
+p butterfly.include?'f'
 # .include?
+
+p butterfly.capitalize
 # .capitalize
+
+
 # Arrays Challenges
 # Create an array that contains the name of at least five TV shows
+favorite_shows = ['Breaking Bad', 'SpongeBob Square Pants', 'Simpsons', 'South Park', 'Wheel of Fortune']
+
 # Find the length of the array
+ p favorite_shows.length
+
+
 # Return the first item in the array
+p favorite_shows.first
+
 # Return the fourth item in the array
+p favorite_shows[3]
+
 # Permanently reverse the order of the array
+favorite_shows.reverse!
+
+p favorite_shows
+
 # Create a new empty array for your top favorite TV shows
+ top_shows = []
+
 # From the full TV show array, add your top two favorite shows to the empty array
+top_shows << favorite_shows[2] << favorite_shows[4]
+p top_shows
 # Back to Syllabus
