@@ -35,16 +35,46 @@ p my_favorite_number - someones_favorite
 p  my_favorite_number = my_favorite_number * 26
 # Strings Challenges
 # Create a variable and return it in a sentence string interpolation
+
+my_name = 'jorge'
+p "Hello my name is #{my_name}"
+
 # Create a variable that contains a string and test some of the Ruby string methods
+
+test_string = 'life is good'
+
 # .upcase
+p test_string.upcase
+
 # .reverse
+p test_string.reverse
+
 # .include?
+p test_string.include?('Life')
+
 # .capitalize
+p test_string.capitalize
+
 # Arrays Challenges
 # Create an array that contains the name of at least five TV shows
+tv_array = ['MASH', 'Stargate SG-1', 'Married with Children', 'One Punch Man', 'Twighlight Zone']
+
 # Find the length of the array
+p tv_array.length
+
 # Return the first item in the array
+p tv_array.first
+
 # Return the fourth item in the array
+p tv_array[3]
+
 # Permanently reverse the order of the array
+p tv_array.reverse!
+
 # Create a new empty array for your top favorite TV shows
+top_shows = []
+
 # From the full TV show array, add your top two favorite shows to the empty array
+top_shows << tv_array.last
+top_shows << tv_array[3]
+p top_shows
