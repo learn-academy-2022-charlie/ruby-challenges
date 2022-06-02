@@ -44,7 +44,7 @@ puts 'Please enter your username.'
 user_name = gets.chomp
 
 puts 'Please enter your password.'
-password = gets.chomp.to_s
+password = gets.chomp
 
 # As a developer, I can create a method that checks for the following rules for a user ID and password:
 # User ID and password cannot be the same.
@@ -72,14 +72,14 @@ def log_in(user_name, password)
     'Please choose a password that is not the same as your username.'
   elsif password == 'password'
     'Your password cannot be password.'
-  elsif password.count('!', '#', '$') == 0
+  elsif password.count('!' + '$' + '#') == 0
     "Password must contain at least one of the following: !, #, or $"
   else 'You are logged in.'
   end
 end
 
 p log_in(user_name, password)
-p password.count('!', '#', '$')
+
 
 # User Stories: Stretch
 # As a user, I can enter my user ID and password into the terminal after being prompted to find out if the they are acceptable.
