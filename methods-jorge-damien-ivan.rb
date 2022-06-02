@@ -67,40 +67,46 @@
     user_password = gets.chomp
 
         def verify_password (password, username)
-            if password != 'password'
+            if password != 'password' 
                 if password.length >= 6 && username != password
                     if password.include?('!') || password.include?('#') || password.include?('$')
                         # "this is a valid password"
                         true
                     else
-                        "password must include !, #, or $"
+                        p "password must include !, #, or $"
+                        false
                     end
                 else
-                    "password must be greater than six character and not the same as the username"
+                    p "password must be greater than six character and not the same as the username"
+                    false
                 end
             else
-                "password can not be password"
+                p "password can not be password"
+                false
             end
         end
 
         def verify_username(password, username)
-            if username.length >= 6 && username != password
+            if username.length >= 6
                 if username.include?('!') || username.include?('#') || username.include?('$') || username.include?(' ')
-                    "username can not include !, #, $, or spaces"
+                    p "username can not include !, #, $, or spaces"
+                    false
                 else
                     # "username is valid"
                     true
                 end
             else
-                "username must be greater than six character and not the same as the password"
+                p "username must be greater than six characters"
+                false
             end
 
         end
         def verify_account(password, username) 
-            if  verify_username(password, username) && verify_password(password, username) 
+            if verify_password(password, username) && verify_username(password, username)
                 "Account has been created"
+            else
+                'Error Occurred'
             end
-            
         end
 
         p verify_account(user_password, user_name)
