@@ -89,5 +89,11 @@ end
 p reversed_casing(random_word)
 
 # Create a method that takes in an array of words and returns all the words that start with a particular letter. Ex) Given the array ['Apple', 'Avocado', 'Banana', 'Mango'] and the letter 'a' the method should return ['Apple', 'Avocado']. With the same method, given the letter 'm' should return ['Mango'].
+['Apple', 'Avocado', 'Banana', 'Mango']
+def particular_letter arr
+    arr.select do |value|
+        value[0] ==
+
+
 # FIZZBUZZ
 # Write a method that prints the numbers from 1 to 100. For multiples of three print Fizz instead of the number, for multiples of five print Buzz instead of the number, for numbers that are multiples of both three and five print FizzBuzz, for all other numbers print the number.
