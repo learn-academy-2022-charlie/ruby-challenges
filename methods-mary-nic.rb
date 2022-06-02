@@ -24,12 +24,37 @@
 #
 # p valid_number 0
 
-def palindrome string
-  if string == string.reverse
-    "#{string} is a palindrome"
-  else
-    "#{string} is not a palindrome"
+# def palindrome string
+#   if string == string.reverse
+#     "#{string} is a palindrome"
+#   else
+#     "#{string} is not a palindrome"
+#   end
+# end
+
+# p palindrome 'Anna'
+
+# p 'Please enter your user Id'
+# user_Id = gets.chomp
+
+# p 'Please enter your password'
+# user_password = gets.chomp
+
+
+
+def rule_checker(id, password)
+  if id.include?('!'||' #'||' $')
+    'Your username cannot contain special characters.'
+  elsif id != password && id.length >= 6 && password.length >= 6 && password.include?('!'||' #'||' $') && password != 'password' && password.include?('1' || '2' || '3' || '4' || '5' || '6' || '7' || '8' || '9' || '0')
+     'You have a valid username and password!'
+  else 
+    'Your username and password suck!'
   end
+
 end
 
-p palindrome 'Anna'
+
+
+p rule_checker(user_Id, user_password)
+
+
