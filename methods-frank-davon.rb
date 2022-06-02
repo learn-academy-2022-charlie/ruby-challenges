@@ -67,10 +67,10 @@
 
 # As a developer, I can create a method that checks for the following rules for a user ID and password:
 puts 'Please enter your username'
-user_username = gets.chomp.to_i
+user_username = gets.chomp
 p user_username
 puts 'Please enter your password'
-user_userpassword = gets.chomp.to_i
+user_userpassword = gets.chomp
 p user_userpassword
 
 # User ID and password cannot be the same.
