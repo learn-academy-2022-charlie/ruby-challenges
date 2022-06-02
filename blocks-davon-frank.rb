@@ -49,6 +49,16 @@ p capitalize word_array
 
 
 # Create a method that takes in an array of numbers and returns the largest number in the array.
+nums_array = ['2','4','12','7','8','5']
+
+def largest array 
+   array.select do |value|
+    value
+   end
+end
+
+p largest nums_array
+
 # Create a method that takes in an array of numbers and returns the smallest number in the array.
 # Create a method that takes in an array of numbers and returns only the odd numbers sorted from least to greatest.
 # Create a method that takes in an array of strings and returns all the strings in reverse casing. All uppercased letters should be returned lowercased and all lowercased letters should be returned uppercased.
