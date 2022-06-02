@@ -34,10 +34,69 @@
 # p lowercase_array
 
 # Create a method that takes in an array of numbers and returns the largest number in the array.
+
+# num_arr = [1,2,3,4,5,6,7]
+# def largest_num array
+#     array.max 
+# end
+# p largest_num num_arr
+
 # Create a method that takes in an array of numbers and returns the smallest number in the array.
+
+# num_arr = [1,2,3,4,5,6,7]
+#  def smallest_num array
+#      array.min 
+#  end
+# p smallest_num num_arr
+
 # Create a method that takes in an array of numbers and returns only the odd numbers sorted from least to greatest.
+
+# num_arr = [77,2,54,63,14,6,97]
+# def odd_sort array
+#     array.select{|value| value % 2 != 0}.sort
+# end
+# p odd_sort num_arr
+
 # Create a method that takes in an array of strings and returns all the strings in reverse casing. All uppercased letters should be returned lowercased and all lowercased letters should be returned uppercased.
+
+# string_arr = ['Collin', 'dOn', 'miCHael', 'sEan', 'ValeRie']
+
+# def rev_case array
+#     array.map{|value| value.swapcase}
+# end
+# p rev_case string_arr
+
+
 # Create a method that takes in an array of words and returns all the words that start with a particular letter. Ex) Given the array ['Apple', 'Avocado', 'Banana', 'Mango'] and the letter 'a' the method should return ['Apple', 'Avocado']. With the same method, given the letter 'm' should return ['Mango'].
+
+# fruit_arr = ['Apple', 'Avocado', 'banana', 'Mango']
+# def starts_with array, string 
+#     array.select do |value|
+#     value[0].downcase == string.downcase
+#     end
+# end
+# p starts_with fruit_arr, 'B'
 
 # FIZZBUZZ
 # Write a method that prints the numbers from 1 to 100. For multiples of three print Fizz instead of the number, for multiples of five print Buzz instead of the number, for numbers that are multiples of both three and five print FizzBuzz, for all other numbers print the number.
+
+
+length = 100
+def fizzbuzz endpoint
+    i = 1
+    fizbuzz_arr = []
+    while i <= endpoint
+        if i % 3 == 0 && i % 5 == 0
+            fizbuzz_arr<<'fizzbuzz'
+        elsif i % 3 == 0 
+            fizbuzz_arr<<'fizz'
+        elsif i % 5 == 0 
+            fizbuzz_arr<<'buzz'
+        else 
+            fizbuzz_arr<<i
+        end 
+        i += 1
+    end
+    puts fizbuzz_arr 
+end
+ fizzbuzz length
