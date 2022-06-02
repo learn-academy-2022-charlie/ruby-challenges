@@ -20,18 +20,68 @@
     # end    
 
 # Create a method that takes in an array of numbers and returns a new array with all the numbers multiplied by 5.
-    num_array = [2, 24, 42, 28, 69]
-    def mult_five array
-        array.map do |value|
-            value * 5 
-        end    
-    end
-    p mult_five num_array
+    # num_array = [2, 24, 42, 28, 69]
+    # def mult_five array
+    #     array.map do |value|
+    #         value * 5 
+    #     end    
+    # end
+    # p mult_five num_array
 
 # Create a method that takes in an array of lowercase words and capitalizes all of the words, permanently modifying the original array.
+    # words = ['gucci', 'gang', 'gang', 'tgod']
+    # def capIt wordArr
+    #     wordArr.map do |value|
+    #         value.capitalize!
+    #     end
+    # end
+
+    # p capIt words
+    # output: ["Gucci", "Gang", "Gang", "Tgod"]
+
 # Create a method that takes in an array of numbers and returns the largest number in the array.
-# Create a method that takes in an array of numbers and returns the smallest number in the array.
+
+    numbers = [2, 4, 9, 69, 42, 24, 13, 26, 99]
+
+    def biggest_num num_array
+        big_num = num_array[0]
+
+        num_array.each do |value|
+            if value > big_num
+                big_num = value
+            end
+        end
+        big_num
+    end
+
+    # p biggest_num numbers
+
+    # puts numbers.max # 69
+    # puts numbers.max(2) # 69, 42 Top two numbers
+    # puts numbers.min # 2
+
+    # Create a method that takes in an array of numbers and returns the smallest number in the array.
+
+    def littlest_num numbers_arr
+        numbers_arr.min
+    end
+
+    p littlest_num numbers
 # Create a method that takes in an array of numbers and returns only the odd numbers sorted from least to greatest.
+
+    def sorted_odds num_arr
+        odd_nums = num_arr.select do |number|
+            number % 2 != 0
+        end
+        # odd_nums.sort do |num1, num2|
+        #     num1 <=> num2
+        # end
+
+        odd_nums.sort {|num1, num2| num1 <=> num2}
+    end
+
+    p sorted_odds numbers
+
 # Create a method that takes in an array of strings and returns all the strings in reverse casing. All uppercased letters should be returned lowercased and all lowercased letters should be returned uppercased.
 # Create a method that takes in an array of words and returns all the words that start with a particular letter. Ex) Given the array ['Apple', 'Avocado', 'Banana', 'Mango'] and the letter 'a' the method should return ['Apple', 'Avocado']. With the same method, given the letter 'm' should return ['Mango'].
 # FIZZBUZZ
