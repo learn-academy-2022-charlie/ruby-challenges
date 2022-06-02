@@ -1,3 +1,5 @@
+require 'io/console'
+
 # Create a method called sum_these_numbers which takes two integers as an argument and prints their sum to the screen.
 def sum_these_numbers (num1, num2)
      num1 + num2
@@ -62,7 +64,7 @@ def account_checker
     puts 'Enter user name'
     user_name = gets.chomp
     puts 'Enter password'
-    password = gets.chomp
+    password = STDIN.noecho(&:gets).chomp
     if user_name == password
         'user name cannot be the same as password'
     elsif user_name.length <=5 || password.length <=5
