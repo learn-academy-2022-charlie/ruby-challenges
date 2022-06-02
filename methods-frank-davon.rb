@@ -66,8 +66,34 @@
 # You are writing the user registration page for a secure web site. On the registration page, the user has to enter a user ID and a password, which has to adhere to the to following criteria:
 
 # As a developer, I can create a method that checks for the following rules for a user ID and password:
+puts 'Please enter your username'
+user_username = gets.chomp.to_i
+p user_username
+puts 'Please enter your password'
+user_userpassword = gets.chomp.to_i
+p user_userpassword
+
 # User ID and password cannot be the same.
+def registration(username,userpassword)
+    if username == userpassword
+        "Hi #{username} and #{userpassword} cannot be the same"
+      else
+        "Hi #{username}"
+      end
+
+p registration(user_username,user_userpassword)
 # User ID and password must be at least six characters long.
+def characters(username,userpassword)
+    if username.length < 6 
+        "Hi #{username} must be at least 6 characters long"
+    elsif userpassword.length < 6
+        "Hi #{userpassword} must be at least 6 characters long"
+    else
+        "Hi #{username} and #{userpassword} must be at least 6 characters long"
+    end
+  end    
+end
+p characters(user_username,user_userpassword)
 # Password must contain at least one of: !#$
 # User ID cannot contain the following characters: !#$ or spaces
 # Password cannot be the word "password".
