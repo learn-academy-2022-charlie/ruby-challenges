@@ -28,8 +28,8 @@ p this_num 5
 p this_num 15
 
 # Create a method that takes in a string and determines if the string is a palindrome.
-p 'enter word'
-user_input = gets.chomp
+# p 'enter word'
+# user_input = gets.chomp
 def is_palindrome string
     if string.reverse == string
     'true'
@@ -45,29 +45,37 @@ end
 # User Stories
 # You are writing the user registration page for a secure web site. On the registration page, the user has to enter a user ID and a password, which has to adhere to the to following criteria:
 p 'Enter your user id'
-
 user_id = gets.chomp
 
 p 'Enter your password'
-user_password =gets.chomp
-
+user_password = gets.chomp
 
 # As a developer, I can create a method that checks for the following rules for a user ID and password:
 
 def login(id, password)
-    if id == password 
-        'id and password can not be the same'
-        elsif id.length >= 6 && password.length >= 6
-        'id and password must be 6 characters or longer'
-        elsif password["!"]
-            'password must include at least one of these characters !'
-         elsif id["!"]
-            'it must include !'
-            elsif password == 'password'
-                'password can not equal password'
-            
-    end         
+    if password == 'password'
+        'password can not equal password'    
+    else
+        if id == password 
+            'id and password can not be the same'
+        else 
+            if id.length < 6 && password.length < 6
+                'id and password must be 6 characters or longer'
+            else 
+                unless password["!"] || password["#"] || password["$"]
+                    'password must include at least one of these characters !, #, $'
+                else 
+                    if id["!"] || id["#"] || id["$"] || id[" "]
+                        'id can not include any of these characters !, #, $ or spaces' 
+                    else
+                        'Your User ID and Password are acceptable.'
+                    end
+                end
+            end
+        end
+    end
 end
+
 p login(user_id, user_password)
 
 # User ID and password cannot be the same.-
@@ -77,6 +85,6 @@ p login(user_id, user_password)
 # Password cannot be the word "password".-
 
 # User Stories: Stretch
-# As a user, I can enter my user ID and password into the terminal after being prompted to find out if the they are acceptable.
+# As a user, I can enter my user ID and password into the terminal after being prompted to find out if the they are acceptable.-
 # User Stories: Super Stretch
 # As a developer, my method ensures that the user's password must contain at least one number.
