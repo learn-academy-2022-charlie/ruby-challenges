@@ -18,8 +18,10 @@
         #if false prompt must contain
           #there is a .match method, or regex (~=)-is also a .match //
 # User ID cannot contain the following characters: !#$ or spaces
+# we can compare the user_id string to see if it contains the special characters if it does prompt the user to enter a username that does not have !#$ or empty spaces. 
 
 # Password cannot be the word "password".
+# Set up equality conditional to check and make sure that password entered by user is not password.
 
 # User Stories: Stretch
 
@@ -28,9 +30,10 @@
 # User Stories: Super Stretch
 
 # As a developer, my method ensures that the user's password must contain at least one number.
-p 'Please enter an ID and a Password. They must be six characters or greater and not match.'
-user_id = 'stephen' #gets.chomp
-user_password = '12$456' #gets.chomp
+p 'Please enter username. It must be six characters or greater. Cannot contain any spaces or !,#,$. It must not be the same as your password.'
+user_id =gets.chomp
+p 'Please enter password. It must be six characters or greater. It must contain  a least one special character,!,#,$ and one number'
+user_password =gets.chomp
 
 def registration(id,pw)
   if id == pw
@@ -39,11 +42,17 @@ def registration(id,pw)
     'Your User ID must be greater than six characters long.'
   elsif pw.length < 6
       'Your Password must be greater than six characters long.'
-  elsif pw.match(/!/) || pw.match(/#/) || pw.match(/\$/)
+  elsif id.match(/!/)||id.match(/#/)||id.match(/\$/)||id.match(/\p{Blank}/)
+    "Please enter a username that doesn't contain any spaces or #,$,!"
+  elsif pw.downcase == 'password'
+    'Your password cannot be password'
+  elsif pw.match(/!/) || pw.match(/#/) || pw.match(/\$/)&& pw.match(/1234567890/)
+
     'Your account has been created'
   else
-      'Your password must contain at least one !, #, or $'
+      'Your password must contain at least one !, #, or $ and at least 1 number.'
   end
 end
 
 p registration(user_id, user_password)
+p user_id,user_password
