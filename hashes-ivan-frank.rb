@@ -25,8 +25,27 @@ my_phone[:tiktok] = my_phone.delete(:react)
 my_phone[:insta] = 'cars'
 my_phone[:twitter] = 'makes some sense'
 
-p my_phone
+# p my_phone
 # As a developer, I can delete two key:value pairs from my_phone.
+
+my_phone.delete(:insta) 
+my_phone.delete(:twitter)
+
+# p my_phone
+
 # As a developer, I can use an enumerable method to return information about all of my_phone's applications.
+
+# my_phone.map do |key, value| 
+#     p "whats going on with #{key} and the whole #{value} thing"
+# end 
+
+
 # Stretch Challenges
 # As a developer, I can create a custom method that takes in my_phone and returns an array with the app name capitalized and information about each phone app.
+
+
+my_array = my_phone.map do |key, value| 
+     "whats going on with #{key.capitalize} and the whole #{value} thing"
+end 
+
+p my_array
