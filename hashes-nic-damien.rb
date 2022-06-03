@@ -25,9 +25,27 @@ my_phone[:whatsapp] = my_phone.delete(:messages)
 my_phone[:reddit] = 'Online Message Board'
 my_phone[:camera] = 'Picture and Video Taking App'
 
-p my_phone
+# p my_phone
 
 # As a developer, I can delete two key:value pairs from my_phone.
+
+my_phone.delete(:reddit)
+my_phone.delete(:facebook)
+# p my_phone
 # As a developer, I can use an enumerable method to return information about all of my_phone's applications.
+
+my_phone.map do |key, value|
+    p "My #{key} is my #{value}."
+end
+
+
 # Stretch Challenges
 # As a developer, I can create a custom method that takes in my_phone and returns an array with the app name capitalized and information about each phone app.
+
+def capitalize hash
+    hash.map do |key, value|
+        "#{key.capitalize} - #{value}."
+    end
+end
+
+p capitalize my_phone
