@@ -15,12 +15,25 @@ my_phone[:fifa22] = 'play soccer, but on your phone instead of outside'
 my_phone[:sudoku] = 'be a nerd with numbers'
 my_phone[:duolingo] = 'learn a new language'
 
-p my_phone[:fifa22]
+# p my_phone[:fifa22]
 my_phone[:sudoku] = 'numbers in a grid'
 my_phone[:fifa22] = 'play soccer after you hurt yourself playing soccer'
-p my_phone[:sudoku]
+# p my_phone[:sudoku]
 my_phone[:twitter]  = my_phone.delete :instagram
-p my_phone
+# p my_phone
 my_phone.delete :twitter
 my_phone.delete :calculator
-p my_phone
+# p my_phone
+
+phone_apps = my_phone.map do |key, value|
+    "the #{key} app does #{value}"
+end
+# p phone_apps
+
+def cap_phone_apps(hash) 
+    hash.map do |key, value|
+        "the #{key.capitalize} app does #{value}"
+    end
+end
+
+p cap_phone_apps(my_phone)
