@@ -21,7 +21,7 @@ my_phone[:wayz] = 'map_app'
 p my_phone
 
 # As a developer, I can delete two key:value pairs from my_phone.
-my_phone.delete()
+my_phone.delete("") 
 # As a developer, I can use an enumerable method to return information about all of my_phone's applications.
 # Stretch Challenges
 # As a developer, I can create a custom method that takes in my_phone and returns an array with the app name capitalized and information about each phone app.
