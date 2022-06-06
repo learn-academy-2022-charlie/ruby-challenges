@@ -1,28 +1,38 @@
 
-
 p  'You wake up from a 7 year coma and realize there was a zombie apocalypse. You wander around the hospital  and there is no one alive except for you. You come across a zombie!! What is your next move?? Go right or left??'
 
-start_hospital = gets.chomp
+user_input= gets.chomp
 
 p 'You have made you choice, now run!'
 
-user_input = gets.chomp
- until user_input == 'right'
-    p 'you go right it leads you outside' 
+def start_hospital (turn)
+   if turn == 'right'
+      p 'You are running down a large hallway and see the exit. Choose inside or outside???'
+   elsif turn == 'left'
+      p 'You go left and you find the cafeteria and hide in a freezer. You begin to loose sensation in your limbs after hiding for hours. You get out of the freezer and there is a zombie standing in front of you. What do you do? Choose to run or fight???'
+   end
+end
+start_hospital (user_input)
 
- end
+user_input2 = gets.chomp
+def hospital_right (turn2)
+   if turn2 == 'outside'
+      p 'You go through the exit and find yourself surrounded by zombies. There is no where to run. Turn around and go back inside the hospital. You are safe for now.'
+   elsif turn2 == 'inside'
+      p 'You go to hide in a closet and you close the door behind you. There is a zombie in the closet and it kills you.'
+   end
+end
+hospital_right (user_input2)
 
-# def start_hospital (turn)
-#         turn3 = gets.chomp
-#         if turn == 'right'
-#             p 'You go right it leads you outside'
-#             p 'You find the exit and find a large group of zombies'
-#         elsif turn == 'left'
-#             p 'You go left you find the cafeteria and hide in a freezer'
-#             p 'After hiding for hours you get out of the freezer the zombie is still there and it kills you YOURE DEAD'
-#         end
-# end
-#  turn = gets.chomp
+user_input3 = gets.chomp
+def hospital_left (turn3)
+   if turn3 == 'run'
+      p 'You run into a hospital operating room, you are safe for now.'
+   elsif turn3 == 'fight'
+      p 'You try to fight off the zombie, but it bites you in the arm. You are able to run away, but it is too late. You will now become a zombie.'
+   end
+end
+hospital_left (user_input3)
 
 # rose_garden = gets.chomp
 # p "You wake up and slowly realize you have spent the night sleeping on a park bench. As your eyes adjust to the morning like you realize you are in the Rose Garden. Surrounding you are many bushes of multi colored roses, it smells fresh and like spring, contrasting to the uncomfortable hangover you are wearing. You suddenly hear a voice over your personal radio, 'This is Neco Armstrong, if anyone can hear this transmission come to the San Diego harbor. We have a mega yacht with food, water, and booze. We will be departing the harbor by sundown and heading to Catalina Island. The island is free of infection and has an open bar and 24/7 karaoke.' You check your watch and realize it's already noon..."
