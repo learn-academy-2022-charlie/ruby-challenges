@@ -14,46 +14,57 @@
 
 #.each_char {|c| putc c; sleep 0.1  } - prints each character one at a time at 0.1 seconds between each print.
         #don't need a p because 'putc'? 
+logo = "
+████████╗██╗░░██╗███████╗ ██████╗░██╗░░░░░██╗░░░██╗███████╗ ░██████╗██╗░░██╗██╗██████╗░████████╗
+╚══██╔══╝██║░░██║██╔════╝ ██╔══██╗██║░░░░░██║░░░██║██╔════╝ ██╔════╝██║░░██║██║██╔══██╗╚══██╔══╝
+░░░██║░░░███████║█████╗░░ ██████╦╝██║░░░░░██║░░░██║█████╗░░ ╚█████╗░███████║██║██████╔╝░░░██║░░░
+░░░██║░░░██╔══██║██╔══╝░░ ██╔══██╗██║░░░░░██║░░░██║██╔══╝░░ ░╚═══██╗██╔══██║██║██╔══██╗░░░██║░░░
+░░░██║░░░██║░░██║███████╗ ██████╦╝███████╗╚██████╔╝███████╗ ██████╔╝██║░░██║██║██║░░██║░░░██║░░░
+░░░╚═╝░░░╚═╝░░╚═╝╚══════╝ ╚═════╝░╚══════╝░╚═════╝░╚══════╝ ╚═════╝░╚═╝░░╚═╝╚═╝╚═╝░░╚═╝░░░╚═╝░░░
 
-# 'YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY
-# YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY
-# YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY
-# YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY
-# JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ
-# JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ
-# JJJJJJJJJJYJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ
-# JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ
-# ???????????????????????????????????????????????????????????????????????????????????????????????????? 
-# ???????????????????????????????????????????????????????????????????????????????????JJJJ?????????????
-# JJJ?J??????????????????????????????J?????????????????????????????????????????????Y5BB#G?????????????
-# 555555J???????????????????????????J5J???????????????????????????????????????????JYB###BGY7??????????
-# 5555555555YYJJ?7???????????????JJY5Y????????????????????????????????????????????77YB##BBPY?7????????
-# 5555555555555PY7777777777777777777??7777777777777777777777777777777777777777777777?B######BJ77777777
-# 555555555555555J777777777777777777777777777777777777777777777777777777777777777777G########P77777777
-# 555555555555555PJ77777777777777777777777777777777777777777777777777777777777777777B########B77777777
-# 55555555555555555777777777!777777777777777777777777777777777777777777777777777777YB#########5!777777
-# 55555555555555555Y!!!!!!!7?7!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!7!!!!!!!!!!!J##########Y?!!!!!!!
-# 555555555555555555Y!!!!!!?J7!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!YPP?!!!!!!!?JP#########P!!!!!!!!!
-# 555555555PBG5555555?~!!!!!!!!!!!!!!!!!!!!!!!~~7~^^^^^^^~~!!!!!!!!!~5##GPPPPPGB####B#######PP55PPPPPP
-# 555555555G#BPBP5555Y??77777!!!!7?7!!~~~!!~^^^:~!^^^^^^^^^^~~!!!!!!~5##?!77!JB###BJY####GYY?JYJ!!!!!!
-# 555555555B#GG#P55555PP5555PYY555P55YJJJ!^^^^^^::^^^^^^^^^^^^~~~~~~~P#B!~~~~~!?5B#BB###P!~~~~~?J~~~~~
-# 555555GP5B#PG#P555555555555555555555PPP?:^^^^^^^^^^^^^^^^^^^^~~~~~~G#G~~~~~~~~~~YPB##G?~~~~~~~YJ~~~~
-# 55555P#P5B#GG#555555555555555555555555PY::^^^^^^^^^^^^^^^^^^^^~~~~~G#G~~~~~~~~~~Y?!B###Y~~~~~~JP~!!!
-# 55555PBP5B#BBG55555555555555555555555555!~:::^^^^^^^^^^^^^^^^^^~~~^P#BP555555555PBGBB###P5555PGG5555
-# PPPPP5BGPB#G55555PPPP55555555555555555PPP5J7~^:^:::^^^^^^^^^^^^^^^^Y#G~~~~!~~~~~~!5Y7J##P777?YJ?!!!!
-# PPPPPPPGGB#GPPPPPPPPPPPPPPPPP55555555PGGGPPP5YJY?!~^^:::::::^^^^^^^J#G^^!Y5Y?!!!!!7?JYP##BP5Y?YJ????
-# BGGPPPPPPG#GGGPPPPPPPPPPPPPPPPPPPPPPPPPBGG555PPPPP55Y?7!~~~~~!!!!!!Y#G!!7?JPP555PPPYJJY##BP5YYYYYYYY
-# ####BB########BBGPPGGBBBBBGBBBBGPPPPPPPGG555555555555P55YYYJJJJJJJJP#BPPPPGGBBBBBBGBGGB#BGGGGGGGGGGG
-# #################################B######BBBGGGGPPGGGGGGGGGGP555YYYYG#B555555P55PP5P555555PP55PGGPPP5
-# ############################################################BBBGGGGB##GGGGGGGGGBGGGGGGGGGBGGGGBBBGGG
-# ####################################################################################################
-# ####################################################################################################
-# ####################################################################################################
-# ####################################################################################################'.each_char {|c| putc c; ;sleep 0}
+██████╗░░█████╗░███╗░░██╗██████╗░██╗████████╗
+██╔══██╗██╔══██╗████╗░██║██╔══██╗██║╚══██╔══╝
+██████╦╝███████║██╔██╗██║██║░░██║██║░░░██║░░░
+██╔══██╗██╔══██║██║╚████║██║░░██║██║░░░██║░░░
+██████╦╝██║░░██║██║░╚███║██████╔╝██║░░░██║░░░
+╚═════╝░╚═╝░░╚═╝╚═╝░░╚══╝╚═════╝░╚═╝░░░╚═╝░░░\n"
 
-
-
-
+opening_scene = '///////////////////////((((((((((((((((((((((((((((//(////((/(((////////////////////////////////////////////////////////
+///////////////////(((((((((((((((/(((((((((((((((((((((((((((((////////////////////////////////////////////////////////
+////////////////(((((((((((((((((((((((((((((((((((((((((((((((/////////////////////////////////////////////////////////
+////////////(/((((((((((((((((((((((((((((((((((((((((((((((((//////////////////////////////////////////////////////////
+////////(((((((((((((((((((((((((((((((((((((((((((((((((((((((/////////////////////////////////////////////////////////
+///////((((((((((((((((((((((((((((((((((((((((((((((((((((((((((///////////////////////////////////////////////////////
+//////((((((((((((((((((((((((((((((((((((((((((((((((((((((((((,    (//////////////////////////////////////////////////
+/////((((((((((((((((((((((((((((((((((((((((((((((((((((((((/          ,///////////////////////////////////////////////
+///((((((((((((((((((((((((((((((((((((((((((((((((((((((((((,        /(////////////////////////////////////////////////
+//(((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((,     ((///////////////////////////////////////////////
+((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((       (//////////////////////////////////////////////
+((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((         (//////////////////////////////////////////////
+((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((         (//////////////////////////////////////////////
+(((((((((((((((((((((((((((((.(((((((((((((((((((((((((((((/(            /(/////////////////////////////////////////////
+((((((((((((((((((((((((((((,..........*(((((((((((((((((               /((/////////////////////////////////////////////
+(((((((((((((((((((((((((((.................. .(((((((( .(  (((        * ///////////////////////////////////////////////
+(((((((((((((((((((((((((,..................                 .           ///////////////////////////////////////////////
+(((((((((((((((((((((((#......................                                            */////////////////////////////
+(((((((((((((((((((###,,,,,,,,,,.####..........                                                 *///////////////////////
+((((((((((((((#######,,,,,,,*#########(..........                                                 ///////////////////***
+((((((((((((############**##############((.......                                                  ////////////////***/*
+((((((((((##################/%(****,,,##(,#(.......                                                .///////////**//***  
+(((((((((###########%##%#%%%%%#############(#.......                                                *//////,,,***** .   
+((((((((#########%%%%%%%%&&%%%%%%%##########((.......                                               ./*,...     ...     
+/((((((((######%%%%&&&&@@@@&&&&&%%%%########((**.....                      **,,.,.                  ..                  
+/((((/(((((#(##%%%&&@@@@@@@@@@@&&%%%%########(((,....           ./   ,  .,.,.                                           
+/((((**,*(((##%#%%&@@@@@@@@@@@@@&%%%%#######((((((...      (*((.(/*/*,,..,.                                             
+*.*,,,,,,,***/((#%&&@@@@@@@@@@@&&%%%####(##(((((((...    ((((/**...,*,. ...                                             
+......,,,,,***//(((##%%%&&%@&@%#(#(((/***,//((((((...    ./(/. .                                                        
+.......,,,,,,***///((((((((((((((//******,,,,/,,,...       .                                                            
+.........,,,,,,****/////////////*****,,,,,,........                                                                     
+ ..........,,,,,,,***************,,,,,,,,.........                                                                      
+   ...........,,,,,,,,,,,,,,,,,,,,,,,,...........                                                                       
+    ..............,,,,,,,,,,,,,,,,.............                                                                         
+       ......................................                                                                           
+        . ................................                                                                              '
 
 
 
@@ -108,61 +119,225 @@
 
 # act_one(user_choice)
 
-'What is your name?'.each_char {|c| putc c; sleep 0.05 }
-user_name = gets.chomp
-"#{user_name}, choose 'Y' or 'N'".each_char {|c| putc c; sleep 0.05 }
+logo.each_char {|c| putc c; sleep 0.0001 }
+opening_scene.each_char {|c| putc c; sleep 0.0001 }
+"\n **You are the Blue Shirt Bandit, what is your name?\n".each_char {|c| putc c; sleep 0.05 }
+user_name= gets.chomp
+
+"**You wake up in a saloon, face down at a card table with drool pooling over your hand.**\n".each_char {|c| putc c; sleep 0.05 }
+
+"**You hear yelling from outside:**\n".each_char {|c| putc c; sleep 0.05 }
+"Git yer ass out here, Blue Shirt Bandit! Yer gonna git what's comin' to ya unless ye got a".each_char {|c| putc c; sleep 0.05 }
+" YELLA' BELLY".each_char {|c| putc c; sleep 0.2 }
+" to match!\n\n".each_char {|c| putc c; sleep 0.05 } 
+
+"**The bartender grabs you by the back of your collar and pushes you out the double swinging doors and into the harsh, bright sunlight.**\n".each_char {|c| putc c; sleep 0.05 } 
+
+"There you are #{user_name}. C'mon".each_char {|c| putc c; sleep 0.05 } 
+" ... ".each_char {|c| putc c; sleep 0.2 } 
+"lets gets this duel over with.\n".each_char {|c| putc c; sleep 0.05 } 
+
+"**You're still woozy on your feet,**\n" .each_char {|c| putc c; sleep 0.0 } 
+"**are you ready?\n ** Options: Y/N? **\n".each_char {|c| putc c; sleep 0.05 }
+
 user_choice = gets.upcase.chomp
 
-def decision_tree input
+# 'What is your name?'.each_char {|c| putc c; sleep 0.0 }
+# user_name = gets.chomp
+
+
+def decision_tree(input, name)
+left_right = rand(2) #random number 0 or 1.
+duel_silhouette = '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@         .                           .@          @@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@       @@@                           @@          @@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@      @@@@.                          @@          @@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@,     #@@@@                           @&         %@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@     @@/@@@@@@@@@@@@@@@@@     @@@@/                            @          @@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@/         @@@@@@@@@@@@@@@@@     @@@,                              @          @@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@     @@@@@@@@@@@@@@@@@    @@@@@                                         @@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@        (@@@@@@@@@@@@@    ,@@@@                                        &@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@.             @@@@@@@@@@(    &                                           @@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                @@@@@@@@@ .@                                             /@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&                 @@@@@@@@.@@@/                                           @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@    *               @@@@@@@@@@@                                          ,@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                 ,   ,@@@@@@@@                                           @@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                @@&    @@@@@#                     /@                    %@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@            ,@@@@    @@@                    &@@@@                   ,@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@              @@@@@@& @                   @@@@@@@@                   %@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@(                @@@@@@@/                @@@@@@@@@@@@%                  .@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@       @@@@      @@@@.                @@@@@@@@@@@@@@@@*                  ,@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@      @@@@@@     @@#               @@@@@@@@@@@@@@@@@@@@@                 &@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@    @@@@@@@@     &                @@@@@@@@@@@@@@@@@@@@@@                 @@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@     @@@@@@@@                    *@@@@@@@@@@@@@@@@@@@@@@@@*                (@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@     @@@@@@@@@                   @@@@@@@@@@@@@@@@@@@@@@@@@@@(                %@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*   %@@@@@@@@@@@                 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                 @@@
+   @@@@@@@@      #@@@@@@@@@@@@@@@@@@     @@@@@@@@@@@@               @@@@@@@@@@@@@@@@@@@@@@@@@@@@(  &@                 @@'
+
+cowboy_emoji = "                                            **,,..,,. *.,.((//,,.*..,.....**                                            
+,,,,/..............................,.,                                          
+,,.............,,,,,,,,,,,,,,........... ,,,                                      
+** ...........,,,,,,,,,,,,,,,,,,,,,.......... ,,                                    
+..............,,,,,,,,,,,,,,,,,,,,,,,,............*.                                  
+. ............,,,,,,,,,,,,,,,,,,,,,,,,,...........                                    
+.. ...........,,,,,,,,,,,,,,,,,,,,,,,,........... (,                                  
+***,(((/**              ,,............,,,,,,,,,,,****,,,,,,,,,........... ,,              **,(((****          
+,,,*,..............,.,**      ..,..........,,,,,,,,,,********,,,,,,,,..........         **,,................%,,,    
+..*.....,,,,,,,,,,,,,.....,,**  **,..........,,,,,,,,,**********,,,,,,,.......... **  **,,......,,,,,,,,,,,,,,...,.,  
+......,,,,,,,,,,,,,,,,,,,........,*, ...........,,,,,,,************,,,,,,.......... @*.@ .......,,,,,,,,,,,,,,,,,,,.....
+,@..,,,,,,,,,,,,,,,,,,,,,..........    ..........,,,,,,,,*******,,,,,,,,..........   ...........,,,,,,,,,,,,,,,,,,,,,..*
+..,,,,,,,,,,,,,,,,,,,,,,...............   ...........,,,,,,,,,,,,,,,..........    ...............,,,,,,,,,,,,,,,,,,,,,,.
+,,,,,********,,,,,,,,,,,.....................   .     ............         ......................,,,,,,,,,,,*******,,,,,
+*,,,*******,,,,,,,,,............... . .                                            ..................,,,,,,,,,*******,,,
+%.,,********,,,,,,,....,(#%%%%%&&&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&&&%%%%%#( ....,,,,,,,********,,.
+,.,,,,******,,,,,,...*(##%%%%&&&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&&&%%%%##( ...,,,,,,******,,,.,
+*/.,,,,,,,,,,,,,,...(##%%%%&&&@@@@@@@@@@@@@@(,,(@@@@@@@@@@@@@@@@@@@@@@@@@,,,@@@@@@@@@@@@@@@&&&%%%###( ..,,,,,,,,,,,,,,,*
+//,*.,,,,,,,,,,...(###%%%&&&&@@@@@@@@@@@@@@,****,@@@@@@@@@@@@@@@@@@@@@@@,****,@@@@@@@@@@@@@@&&&&%%%##((...,,,,,,,,,,.,//
+//*..,,,,,,,...(##%%%%&&&&&&&@@@@@@@@@@@,******,@@@@@@@@@@@@@@@@@@@@@,*******@@@@@@@@@@@&&&&&&&%%%###(...,,,,,,,.,//  
+*..,,,.../(##%%%&&&&&&&&&&&&&&@@@@@&**////**&@@@@@@@@@@@@@@@@@@@/**////**@@@@@&&&&&&&&&&&&&&%%%###(...,,,..,%%%%%%
+**..../(##%%%&&&&&&&&&&&&&&&&&&@@**/////***@@@@@@@@@@@@@@@@@@@**/////**%&&&&&&&&&&&&&&&&&&&&%%###(.....*********
+,,**(###%%%&&&&&&&&&&&&&&&&&&&@,*//////*,@@@@@@@@@@@@@@@@@@@**/////**#&&&&&&&&&&&&&&&&&&&&%%###((.,,**********
+((#(####%%&&&&&&&&&&&&&&&&&&&&@,*/////**,&@@@@&&&&&&&&&&&&@@***////**#&&&&&&&&&&&&&&&&&&&&&%%###((((          
+((((###%%%&&&&&&&&&&&&&&&&&&&&&#********%&&&&&&&&&&&&&&&&&&&,********@&&&&&&&&&&&&&&&&&&&&&%%%###(((          
+(#((###%%%&&&&&&&&&&&&&&&&&&&&&&********&&&&&&&&&&&&&&&&&&&&@*******,&&&&&&&&&&&&&&&&&&&&&%%%%###(((          
+%((####%%%%%%%&&&&&&&&&&&&&&&&&&&******@&&&&&&&&&&&&&&&&&&&&&/******@&&&&&&&&&&&&&&&&&&%%%%%%%###(((          
+(((####%%%%%%%%%&&&&&&&&&&&&&&&&&@,,,,@&&&&&&&&&&&&&&&&&&&&&&&@,,,,&&&&&&&&&&&&&&&&&&%%%%%%%%%###((/          
+(((####%%%%%%%%%%&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&%%%%%%%%%%%###((/((((((((((
+(/((####%%%%%%%%%%%%&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&%%%%%%%%%%%%####((/((((((((((
+(/((#####%%%%%%%%%%%%%%%&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&%%%%%%%%%%%%%%%#####(((%%%%%%%%%%
+(/(((#######%%%%%%%%%%%%%%%%&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&%%%%%%%%%%%%%%%%%#######(((@          
+((/((#########%%%,,,,,,,,,,/&&%%&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&%&&*,,,,,,,,,,%%%#########((/(          
+##((((#########%%,,#%%%%%%#*,,,,,,,,,,,,,,,,*/%%%&&&%%#/*,,,,,,,,,,,,,,,,/#%%%%%#/,,%%#########((/(#          
+###/(((##########%,,%%&&&&&&&&&&&&&&&&&&%%%(//*********/(#%%&&&&&&&&&&&&&&&&&&%%#,,%#########(((//(#          
+((/(((##########%,,%%&&&&&&&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&&&&&&&&&%#,,%##########((//(            
+##(/((((#########%,,/#%%%&&&&&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&&&&&&%%%##*,,##########(((//##            
+(#//(((#########%,***********,/#%%%&&&&&&&&@@@@@@@&&&&&&&&%%%(************,/#########((((//(              
+%%///(((((########%********/////******************************/////*******#########((((//&%%              
+((///(((((########%*****////////////////////////////////////////*****,########(((((//*&(                
+##@//(((((((######%******///////////////////////////////////*****(########((((((//##                  
+##@//(((((((#######%******/////////////////////////////*****#########((((((///##                    
+(((///(((((((########%/*******////////////////********#%########(((((((///((                      
+##/#///((((((((##########%#,******************%%##########((((((((////##                        
+((%///((((((((((################################(((((((((((///((                            
+( ////((((((((((((((#################(((((((((((((////#%((((((((((((((((((((((((((((((((
+##(#@/////(((((((((((((((((((((((((((((((((/////((##                                  
+#(((/#&////////(((((((((((((((///////(//((((     "
+yeehaw = "
+██╗░░░██╗███████╗███████╗██╗░░██╗░█████╗░░██╗░░░░░░░██╗██╗██╗██╗
+╚██╗░██╔╝██╔════╝██╔════╝██║░░██║██╔══██╗░██║░░██╗░░██║██║██║██║
+░╚████╔╝░█████╗░░█████╗░░███████║███████║░╚██╗████╗██╔╝██║██║██║
+░░╚██╔╝░░██╔══╝░░██╔══╝░░██╔══██║██╔══██║░░████╔═████║░╚═╝╚═╝╚═╝
+░░░██║░░░███████╗███████╗██║░░██║██║░░██║░░╚██╔╝░╚██╔╝░██╗██╗██╗
+░░░╚═╝░░░╚══════╝╚══════╝╚═╝░░╚═╝╚═╝░░╚═╝░░░╚═╝░░░╚═╝░░╚═╝╚═╝╚═╝"
+credits = "
+░██████╗████████╗███████╗██████╗░██╗░░██╗███████╗███╗░░██╗░░░
+██╔════╝╚══██╔══╝██╔════╝██╔══██╗██║░░██║██╔════╝████╗░██║░░░
+╚█████╗░░░░██║░░░█████╗░░██████╔╝███████║█████╗░░██╔██╗██║░░░
+░╚═══██╗░░░██║░░░██╔══╝░░██╔═══╝░██╔══██║██╔══╝░░██║╚████║██╗
+██████╔╝░░░██║░░░███████╗██║░░░░░██║░░██║███████╗██║░╚███║╚█║
+╚═════╝░░░░╚═╝░░░╚══════╝╚═╝░░░░░╚═╝░░╚═╝╚══════╝╚═╝░░╚══╝░╚╝
+
+███╗░░░███╗██╗░█████╗░██╗░░██╗░█████╗░███████╗██╗░░░░░░░░ ██╗░░░░░░█████╗░░██████╗░░█████╗░███╗░░██╗
+████╗░████║██║██╔══██╗██║░░██║██╔══██╗██╔════╝██║░░░░░░░░ ██║░░░░░██╔══██╗██╔════╝░██╔══██╗████╗░██║
+██╔████╔██║██║██║░░╚═╝███████║███████║█████╗░░██║░░░░░░░░ ██║░░░░░██║░░██║██║░░██╗░███████║██╔██╗██║
+██║╚██╔╝██║██║██║░░██╗██╔══██║██╔══██║██╔══╝░░██║░░░░░██╗ ██║░░░░░██║░░██║██║░░╚██╗██╔══██║██║╚████║
+██║░╚═╝░██║██║╚█████╔╝██║░░██║██║░░██║███████╗███████╗╚█║ ███████╗╚█████╔╝╚██████╔╝██║░░██║██║░╚███║
+╚═╝░░░░░╚═╝╚═╝░╚════╝░╚═╝░░╚═╝╚═╝░░╚═╝╚══════╝╚══════╝░╚╝ ╚══════╝░╚════╝░░╚═════╝░╚═╝░░╚═╝╚═╝░░╚══╝"
 # option 1
    if input == 'Y'
-    p 'You lose'
+    "You step out onto the dirt road.\n You squint towards the gunslinger;\n It's way too bright out here.\n A gust of wind picks up and the gunslinger's leather duster billows around him.\n A tumbleweed rolls past.\n The whole town is silent as a graveyard and still as a tombstone.\n 
+    As you reach down to your holster, the gunslinger draws and shoots you in the chest!\n\n You die like a dog.".each_char {|c| putc c; sleep 0.05 }
 # option 2
    elsif input == 'N'
-    p 'option 2 happened'
-    p 'Choose Y'
+    "Of course you're not ready! You don't even know the name of this backwater, two horse town. You stand still for a moment and take in your surroundings. A dog is lying on the saloon porch next to a rocking chair with an old man. The man is dozing with the brim of a straw hat over his eyes. You close your eyes and feel a breeze touch your dust covered cheeks.\n".each_char {|c| putc c; sleep 0.05 }
+    "You pat your holster and find it empty.\n".each_char{|c| putc c; sleep 0.05 }
+    "Are you ready now?\n Options: Y/N\n".each_char {|c| putc c; sleep 0.05 }
+    
    input = gets.upcase.chomp
 # option 2a
-    if input == 'Y'
-        p 'option 2a happened'
-        p 'Choose Y'
+    if input == 'N'
+        "Your holster is empty! It's coming back to you.\n You went all in on a big jackpot and tossed your revolver on the table.\n You had 4 of a kind, but Big Henry had  of a kind.\n You notice the sleeping old man has a revolver on his hip. How do you ask him to borrow it?\n".each_char {|c| putc c; sleep 0.05 }
+        "Options: Nicely, Rudely\n".each_char {|c| putc c; sleep 0.05 }
+               
     input = gets.upcase.chomp
 # option 2a.b
-        if input == 'Y'
-                p 'option2a.b happens'
-                p 'Choose Y / N'
+        if input == 'NICELY'
+                "You clear your throat loudly. The old man slowly adjusts his straw hat back onto his head and looks up at you.\n
+                        'Can I help you, pardner?'\n You ask nicely, 'Hey there mister. You mind if I borrow your iron to kill that rude sonnavabitch out in that there street? I promise you'll get it back one way or another.'\n The old man furrows his brow 'Sure, why the hell not?'\n He flips his revolver around and hands it to you butt first. You stick the revolver in your holster. The old man goes back to his nap.\n".each_char {|c| putc c; sleep 0.05 }
+                        "Options: Continue\n".each_char {|c| putc c; sleep 0.05 }
+                        
         input = gets.upcase.chomp
 # option 2a.b.a
-                if input == 'Y'
-                        p 'option2a.b.a happens'
-                        p 'Choose Y / N'
+                if input == 'CONTINUE'
+                       "You pat the revolver on your hip. You look out onto the dirt road.\n The gunslinger is standing, glaring at you  with his hands on his hips. \n A metallic glint peeks out from under his right hand.\n Where are you going to stand, back to the sun, or facing the sun?\n
+                       Options: back/facing?\n".each_char {|c| putc c; sleep 0.05 }
+                       
                 input = gets.upcase.chomp
 # option 2a.b.a.a
-                        if input == 'Y'
-                                p 'option2.a.b.a.a happens'
-                                p 'aim left or right'
+                        if input == 'BACK'
+                               "You step out onto the dirt road. You look towards the gunslinger and he squints back at you. He twiddles his fingers over his revolver. A gust of wind picks up and the gunslinger's leather duster billows around him.\n".each_char {|c| putc c; sleep 0.05 }
+                                                                "A tumbleweed rolls past.\n".each_char {|c| putc c; sleep 0.2 }
+                                                                "The whole town is silent as a graveyard and still as a tombstone. You're not afraid of this cowpoke, you're the fastest gun West of the Mississippi!
+                                …\n
+                               …\n except you're still drunk. You're seeing two of him! Which one do you shoot, left or right?\n Options: left, right\n".each_char {|c| putc c; sleep 0.05 }
+                               
                         input = gets.upcase.chomp
 # option aim left
-                                if input == 'left'
-                                        p 'maybe you win, maybe you lose'
+                                if left_right == 0
+                                        duel_silhouette.each_char{|c| putc c; sleep 0.0001 }
+                                        "You draw your borrowed revolver with lightning speed! You feel a wave of nausea come over you. You slam one eye shut and squeeze the trigger.\n
+                                        BANG!\n
+                                        The sound of a gunshot hangs in the air.\n
+                                        The dust settles…\n
+                                        …\n and the gunslinger is crumpled in a heap.\n
+                                        You hand the revolver back to the old man and say, “thank you, kindly.”\n
+                                        The legend of #{name}, the Blue Shirt Bandit lives on.\n
+                                        ****END****                                       \n".each_char {|c| putc c; sleep 0.05 }
+                                        cowboy_emoji.each_char {|c| putc c; sleep 0.0001 }
+                                        yeehaw.each_char {|c| putc c; sleep 0.0001 }
+                                        credits.each_char {|c| putc c; sleep 0.0001 }
 # option aim right
-                                elsif input == 'right'
-                                        p 'maybe you win, maybe you lose'
+                                elsif left_right == 1
+                                        duel_silhouette.each_char{|c| putc c; sleep 0.0001 }
+                                        "\nYou draw your borrowed revolver with lighting speed! You feel a wave of nausea come over you. You slam one eye shut and squeeze the trigger.\n
+                BANG!\n The sound of gunshot hangs in the air.\n The dust settles…\n …\n and you crumple into a heap.\n The old man walks up to your corpse and pries his revolver out of your gnarled hand.\n 'Well, at least yew kept yer promise.'\n ****END****                                       \n".each_char {|c| putc c; sleep 0.05 }
+                                        cowboy_emoji.each_char {|c| putc c; sleep 0.0001 }
+                                        yeehaw.each_char {|c| putc c; sleep 0.0001 }
+                                        credits.each_char {|c| putc c; sleep 0.0001 }
                                 end
 # option2a.b.a.b
-                        elsif input == 'N'
-                                p 'option2a.b.a.b happens - end game'
+                        elsif input == 'FACING'
+                                "\nYou step out onto the dirt road.\n You squint towards the gunslinger;\n It's way too bright out here.\n A gust of wind picks up and the gunslinger's leather duster billows around him.\n A tumbleweed rolls past.\n The whole town is silent as a graveyard and still as a tombstone.\n 
+                                As you reach down to your holster, the gunslinger draws and shoots you in the chest!\n\n You die like a dog.".each_char {|c| putc c; sleep 0.05 }
+                                cowboy_emoji.each_char {|c| putc c; sleep 0.0001 }
+                                yeehaw.each_char {|c| putc c; sleep 0.0001 }
+                                        credits.each_char {|c| putc c; sleep 0.0001 }
                         end
 # option2a.b.b
-                elsif input == 'N'
-                        p 'option2a.b.b happens - end game'
                 end
+                elsif input == 'RUDELY'
+                        "“Give me your gun old man, I got some killin' to do.”
+                                The old man quickly points his revolver at you and cocks the hammer.\n
+                                'Ya got some eggs on ya, boy. I won't give ya my iron, but I'll give ya my lead.'\n
+                                The old man motions towards the gunslinger on the street.\n
+                                'Now git out there and die before I kill ya myself.'\n".each_char {|c| putc c; sleep 0.05 }
+                                "You step out onto the dirt road.\n You squint towards the gunslinger;\n It's way too bright out here.\n A gust of wind picks up and the gunslinger's leather duster billows around him.\n A tumbleweed rolls past.\n The whole town is silent as a graveyard and still as a tombstone.\n 
+                                 As you reach down to your holster, the gunslinger draws and shoots you in the chest!\n\n You die like a dog.".each_char {|c| putc c; sleep 0.05 }
+                                 cowboy_emoji.each_char {|c| putc c; sleep 0.0001 }
+                                 yeehaw.each_char {|c| putc c; sleep 0.0001 }
+                                        credits.each_char {|c| putc c; sleep 0.0001 }
         end
-    end
+        elsif input == 'Y'
+                "You step out onto the dirt road.\n You squint towards the gunslinger;\n It's way too bright out here.\n A gust of wind picks up and the gunslinger's leather duster billows around him.\n A tumbleweed rolls past.\n The whole town is silent as a graveyard and still as a tombstone.\n 
+        As you reach down to your holster, the gunslinger draws and shoots you in the chest!\n\n You die like a dog.".each_char {|c| putc c; sleep 0.05 }
+        cowboy_emoji.each_char {|c| putc c; sleep 0.0001 }
+        yeehaw.each_char {|c| putc c; sleep 0.0001 }
+                                        credits.each_char {|c| putc c; sleep 0.0001 }
+                                        
+        end
 # catch all
    else
     p 'Error: Option does not exist'
    end 
 end
 
-decision_tree(user_choice)
+decision_tree(user_choice, user_name)
