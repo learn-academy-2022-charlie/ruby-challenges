@@ -42,13 +42,20 @@
 test_arr = ['yes', 'no', 'maybe', 'so']
 
 def upcase_it array
-    array.map do |value|
+    # array.map do |value|
         value.upcase
-    end
+    # end
 end
 p upcase_it test_arr
 
 # Create a method that takes in an array of numbers and returns the largest number in the array.
+num_array=[5,1,9,-4,-3]
+def large_num array
+    array.map do |value|
+    array.max
+    end
+end
+p large_num num_array
 # Create a method that takes in an array of numbers and returns the smallest number in the array.
 # Create a method that takes in an array of numbers and returns only the odd numbers sorted from least to greatest.
 # Create a method that takes in an array of strings and returns all the strings in reverse casing. All uppercased letters should be returned lowercased and all lowercased letters should be returned uppercased.
