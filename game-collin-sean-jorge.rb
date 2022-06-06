@@ -36,6 +36,8 @@ p 'Player enter your name'
 
 p 'You went on a night diving expedition. As you emerge from the sea, the boat is GONE!!! You decide to swim towards the shore'
 
+puts " "
+
 p "#{user_name}, you are on the beach in pitch black under a new moon. All you have on you is a fishing knife and a flashlight. In the far off distance you notice a faint light. What do you do next? Will you decide to head into the jungle towards the light or do you wait it out until the morning on the beach?"
 p "#{user_name}, type trek or beach" 
     trek_beach = gets.chomp
@@ -49,23 +51,45 @@ if trek_beach == 'trek'
                 p "You reach for you knife and take a stab at the Triguar as he pounces on you. As the Triguar lands on you, you manage to stab him in the heart but you get knocked unconsious. You wake up in the morning drenched in the Triguars blood. You continue on your journey towards the light"
                 puts " "
                 p 'As you proceed on your journey you reach a river crossing. Do you decide to cross the bridge or find an alternate route. Enter: bridge or alternate'
-    user_name = gets.chomp
-        if user_name == 'bridge'
-            p 'The bridge is military grade and breaks in half. You are now in the river and get eaten by dinosaur sized piranahs. Your journey is OVA'
-        elsif
-            p 'You walk along the river bank and you find a thick vine hanging from a gargantuan tree. On the bank you see a raft made from human bones. What do you do? Will you bust a Tarzan or ride the raft of Charon? Enter: tarzan or charon'
-        else
-                p '#{user_name}, your only choices are bridge or alternate'
-                # edit to allow specific text  
-    end
-        user_name = gets.chomp
-
-
-p 'You arrive at a village. In the distance you see a group of people. As you approach them, they turn around and you see zombies... Then your alarm goes off and it is time to live the dream and check in with Austin and Charlean at Learn Academy'
             end
+                    bridge_alt = gets.chomp
+                        if bridge_alt == 'bridge'
+                            p 'The bridge is military grade and breaks in half. You are now in the river and get eaten by dinosaur sized piranahs. Your journey is OVA'
+                        elsif
+                            p 'You walk along the river bank and you find a thick vine hanging from a gargantuan tree. On the bank you see a raft made from human bones. What do you do? Will you bust a Tarzan or ride the raft of Charon? Enter: tarzan or charon'
+                                tarzan_charon = gets.chomp
+                                if tarzan_charon == 'tarzan'
+                                    p 'You swing onto the other side and roll down a hill into the village'
+                                    puts " "
+                                    p 'You arrive at a village. In the distance you see a group of people. As you approach them, they turn around and you see zombies... Then your alarm goes off and it is time to check in at Learn Academy'
+                                else
+                                    p 'The Charon throws you in the river becuase you are broke. GAME OVER'
+                                end
+                        end
 else
-    p 'You build a fire and survive the night. In the morning you make your way in the direction of the light'         
+    p 'You build a fire and survive the night. In the morning you make your way in the direction of the light'
+    puts " "
+    p 'As you proceed on your journey you reach a river crossing. Do you decide to cross the bridge or find an alternate route. Enter: bridge or alternate'
+    bridge_alt = gets.chomp
+                        if bridge_alt == 'bridge'
+                            p 'The bridge is military grade and breaks in half. You are now in the river and get eaten by dinosaur sized piranahs. Your journey is OVA'
+                        else
+                            p 'You walk along the river bank and you find a thick vine hanging from a gargantuan tree. On the bank you see a raft made from human bones. What do you do? Will you bust a Tarzan or ride the raft of Charon? Enter: tarzan or charon'
+                            tarzan_charon = gets.chomp
+                                if tarzan_charon == 'tarzan'
+                                    p 'You swing onto the other side and roll down a hill into the village'
+                                    puts " "
+                                    p 'You arrive at a village. In the distance you see a group of people. As you approach them, they turn around and you see zombies... Then your alarm goes off and it is time to check in at Learn Academy'
+                                else
+                                    p 'The Charon throws you in the river becuase you are broke. GAME OVER'
+                                end
+                        end
 end
+
+
+
+                    
+
 
 # p 'As you proceed on your journey you reach a river crossing. Do you decide to cross the bridge or find an alternate route. Enter: bridge or alternate'
 #     user_name = gets.chomp
