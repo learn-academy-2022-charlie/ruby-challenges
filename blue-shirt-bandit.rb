@@ -60,50 +60,109 @@
 
 
 
-p 'What is your name?'
-user = gets.chomp 
-"#{user}, welcome blah blah do you do option1? or option2?".each_char {|c| putc c; sleep 0.1  }
-user_choice = gets.chop
+# p 'What is your name?'
+# user = gets.chomp 
+# "#{user}, welcome blah blah do you do option1? or option2?".each_char {|c| putc c; sleep 0 }
+# user_choice = gets.chop
 
-def act_one input
-   if input == 'option1'
-    'You lose'.each_char {|c| putc c; sleep 0.1  }
-   elsif input == 'option2'
-    'you chose option 2'
-    'option 2a'
-   input = gets.chomp
-    if input == 'option2a'
-        'option 2a happened'
-        'option 2a.b'
-    input = gets.chomp
-        if input == 'option2a.b'
-                'option2a.b happens'
-                'option2a.b.a / option2a.b.b'
-        input = gets.chomp
-                if input == 'option2a.b.a'
-                        'option2a.b.a happens'
-                        'option2a.b.a.a / option2a.b.a.b'
-                input = gets.chomp
-                        if input == 'option2.a.b.a.a'
-                                'option2.a.b.a.a happens'
-                                'aim left or right'
-                        input = gets.chomp
+# def act_one input
+#    if input == 'option1'
+#     'You lose'.each_char {|c| putc c; sleep 0  }
+#    elsif input == 'option2'
+#     p 'you chose option 2'
+#     p 'option 2a'
+#    input = gets.chomp
+#     if input == 'option2a'
+#         p 'option 2a happened'
+#         p 'option 2a.b'
+#     input = gets.chomp
+#         if input == 'option2a.b'
+#                 p 'option2a.b happens'
+#                 p 'option2a.b.a / option2a.b.b'
+#         input = gets.chomp
+#                 if input == 'option2a.b.a'
+#                         p 'option2a.b.a happens'
+#                         p 'option2a.b.a.a / option2a.b.a.b'
+#                 input = gets.chomp
+#                         if input == 'option2.a.b.a.a'
+#                                 p 'option2.a.b.a.a happens'
+#                                 p 'aim left or right'
+#                         input = gets.chomp
+#                                 if input == 'left'
+#                                         p 'maybe you win, maybe you lose'
+#                                 elsif input == 'right'
+#                                         p 'maybe you win, maybe you lose'
+#                                 end
+#                         elsif input == 'option2a.b.a.b'
+#                                 p 'option2a.b.a.b happens - end game'
+#                         end
+#                 elsif input == 'option2a.b.b'
+#                         p 'option2a.b.b happens - end game'
+#                 end
+#         end
+#     end
+#    else
+#     p 'Error: Option does not exist'
+#    end 
+# end
+
+# act_one(user_choice)
+
+'What is your name?'.each_char {|c| putc c; sleep 0.05 }
+user_name = gets.chomp
+"#{user_name}, choose 'Y' or 'N'".each_char {|c| putc c; sleep 0.05 }
+user_choice = gets.upcase.chomp
+
+def decision_tree input
+# option 1
+   if input == 'Y'
+    p 'You lose'
+# option 2
+   elsif input == 'N'
+    p 'option 2 happened'
+    p 'Choose Y'
+   input = gets.upcase.chomp
+# option 2a
+    if input == 'Y'
+        p 'option 2a happened'
+        p 'Choose Y'
+    input = gets.upcase.chomp
+# option 2a.b
+        if input == 'Y'
+                p 'option2a.b happens'
+                p 'Choose Y / N'
+        input = gets.upcase.chomp
+# option 2a.b.a
+                if input == 'Y'
+                        p 'option2a.b.a happens'
+                        p 'Choose Y / N'
+                input = gets.upcase.chomp
+# option 2a.b.a.a
+                        if input == 'Y'
+                                p 'option2.a.b.a.a happens'
+                                p 'aim left or right'
+                        input = gets.upcase.chomp
+# option aim left
                                 if input == 'left'
-                                        'maybe you win, maybe you lose'
+                                        p 'maybe you win, maybe you lose'
+# option aim right
                                 elsif input == 'right'
-                                        'maybe you win, maybe you lose'
+                                        p 'maybe you win, maybe you lose'
                                 end
-                        elsif input == 'option2a.b.a.b'
-                                'option2a.b.a.b happens - end game'
+# option2a.b.a.b
+                        elsif input == 'N'
+                                p 'option2a.b.a.b happens - end game'
                         end
-                elsif input == 'option2a.b.b'
-                        'option2a.b.b happens - end game'
+# option2a.b.b
+                elsif input == 'N'
+                        p 'option2a.b.b happens - end game'
                 end
         end
     end
+# catch all
    else
-    'please enter option 1 or option 2'
+    p 'Error: Option does not exist'
    end 
 end
 
-act_one(user_choice)
+decision_tree(user_choice)
