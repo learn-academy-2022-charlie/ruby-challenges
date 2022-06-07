@@ -51,34 +51,34 @@
 # As a developer, I can create a method called all_colors that when called will print a sentence telling me the three colors of a given palette.
 # As a developer, I can change one or more colors of a given palette.
 
-class ColorPalette
-    attr_accessor :color1, :color2, :color3
-    def initialize(color1, color2, color3)
-        @color1 = color1
-        @color2 = color2
-        @color3 = color3
-    end
-    def all_colors
-        "#{color1} #{color2} #{color3}"
-    end
-end
-red = ColorPalette.new('burgandy', 'pink', 'dark red')
-p red.color1
-p red.all_colors
-red.color3 = 'blood'
-p red.color3
+# class ColorPalette
+#     attr_accessor :color1, :color2, :color3
+#     def initialize(color1, color2, color3)
+#         @color1 = color1
+#         @color2 = color2
+#         @color3 = color3
+#     end
+#     def all_colors
+#         "#{color1} #{color2} #{color3}"
+#     end
+# end
+# red = ColorPalette.new('burgandy', 'pink', 'dark red')
+# p red.color1
+# p red.all_colors
+# red.color3 = 'blood'
+# p red.color3
 
-blue = ColorPalette.new('sky', 'light', 'dark')
-p blue.color2
-p blue.all_colors
-blue.color1 = 'seafaom'
-p blue.color1
+# blue = ColorPalette.new('sky', 'light', 'dark')
+# p blue.color2
+# p blue.all_colors
+# blue.color1 = 'seafaom'
+# p blue.color1
 
-yellow = ColorPalette.new('bright', 'popcorn', 'yellow snow')
-p yellow.color3
-p yellow.all_colors
-yellow.color2 = 'sun'
-p yellow.color2
+# yellow = ColorPalette.new('bright', 'popcorn', 'yellow snow')
+# p yellow.color3
+# p yellow.all_colors
+# yellow.color2 = 'sun'
+# p yellow.color2
 
 # ---------------------------------------------
 
@@ -114,3 +114,36 @@ p yellow.color2
 # Hint: Find out how the spaceship operator can help you with an array.
 # SUPER STRETCH: As a developer, I can utilize a Ruby module to help DRY up my code. I can create a swim method inside of my module that will apply to Animals who can swim. This method should return "I can swim!"
 # Hint: Look into module mix ins. Since not all animals can swim, only certain Animals will have access to this module.
+
+  
+  class Animal
+    attr_accessor :title 
+    def initialize title
+        @life = true
+        @age = 0
+        @title = title
+    end
+    def animal_age
+        @age += 1
+    end
+  end
+  bird = Animal.new 'eagle'
+  p bird
+
+#   bear = Animal.new 'bear'
+#   p bear
+ 
+  class Fish < Animal
+    def initialize title
+        super
+        @blood = 'cold blooded'
+    end
+  end
+
+  fish = Fish.new 'Nemo'
+  p fish
+  fish.animal_age
+  fish.animal_age
+  p fish
+  
+  
