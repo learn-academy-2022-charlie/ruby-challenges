@@ -36,7 +36,28 @@ p dishes.show_info
 # As a developer, I can initialize each instance of class Task with a status that has a default value of 'incomplete'.
 
 # As a developer, I can update the status of each instance of class Task when the task has been completed.
+
 # For the following ColorPalette challenge use initialize and attr_accessor methods in your class
+class ColorPalette
+
+attr_accessor :type1, :type2, :type3
+
+    def initialize type1, type2, type3
+        @type1 = type1
+        @type2 = type2
+        @type3 = type3
+    end
+    def all_colors
+        "#{type1}, #{type2}, #{type3} are in this palette."
+    end
+end
+green = ColorPalette.new('Chartreuse', 'Kelly', 'Seafoam')
+p green.type1
+p green.type2
+p green.type3
+p green.all_colors
+p green.type1 = 'Lime'
+p green.all_colors
 
 # As a developer, I can create a class called ColorPalette.
 # As a developer, I can create three instances (objects) of class ColorPalette. (e.g green = ColorPalette.new)
@@ -44,6 +65,8 @@ p dishes.show_info
 # As a developer, I can print the value of each individual color.
 # As a developer, I can create a method called all_colors that when called will print a sentence telling me the three colors of a given palette.
 # As a developer, I can change one or more colors of a given palette.
+
+
 # Animal Kingdom
 # As a developer, I can make an Animal (generic Animal class).
 # As a developer, upon initialization, I can give my Animal a status of alive, which will be set to true.
