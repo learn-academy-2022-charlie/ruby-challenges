@@ -90,25 +90,41 @@ class Animal
 end          
 
 class Fish < Animal
-    attr_accessor :species
-    def initialize species_param
-        super 
+    attr_accessor :alive , :age
+    def initialize 
+        super()
         @cold_blooded = true
-        @species = species_param
     end
 end     
 
-# class Salmon < Fish 
-#     attr_accessor :alive , :age
-
-#     def initialize species_param 
-#         super 
-#         @species = species_param
-#     end 
-# end
-atlantic_salmon = Fish.new("atlantic salmon")
-
+class Salmon < Fish 
+    attr_accessor :alive , :age, :species
+    def initialize(species_param)
+        super()
+        @species = species_param
+    end
+    def info 
+        p "This Salmon is #{@species}, alive? #{@alive}, and is #{@age} year(s) old."
+    end
+    def birthday 
+        super
+        if @age == 4
+            @alive = false
+            p "This fish is dead."
+        end
+    end
+end
+atlantic_salmon = Salmon.new('Atlantic')
 p atlantic_salmon
+atlantic_salmon.birthday 
+p atlantic_salmon
+atlantic_salmon.info
+atlantic_salmon.birthday 
+atlantic_salmon.info
+atlantic_salmon.birthday 
+atlantic_salmon.info
+atlantic_salmon.birthday 
+atlantic_salmon.info
 
 # As a developer, upon initialization, I can give my Animal a status of alive, which will be set to true.
 # As a developer, I can give my Animal an age of 0 upon creation.
@@ -123,9 +139,11 @@ p atlantic_salmon
 
 # As a developer, I can see that my Salmon is cold-blooded.
 # As a developer, I can age my Salmon up.
+
 # As a developer, I can see a message that tells me all of my Salmon's information.
 # As a developer, if my Salmon reaches the ripe old age of 4, I can make it die peacefully after a full and happy life.
 # Hint: You will need a method that changes the status of alive in the initialize method of Animal.
+
 # As a developer, I can create a Mammal that inherits from Animal.
 # As a developer, I can initialize all of my Mammals to be warm_blooded.
 # As a developer, I can create a Bear that inherits from Mammal.
