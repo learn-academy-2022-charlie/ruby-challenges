@@ -27,11 +27,35 @@ p wash_dishes
 
 # For the following ColorPalette challenge use initialize and attr_accessor methods in your class
 # As a developer, I can create a class called ColorPalette.
+
+class ColorPalette
+    attr_accessor :color1, :color2, :color3
+    def initialize color1, color2, color3
+         @color1 = color1
+         @color2 = color2
+         @color3 = color3
+    end
+   
+end
+
+gurple = ColorPalette.new('green', 'purple', 'grape')
+porange = ColorPalette.new('porple', 'norange', 'sadness')
+yurgandy = ColorPalette.new('just', 'do', 'yellow')
+
+p gurple.color1
+p gurple.color2
+
+porange.color1 = 'confused w/ purple'
+
+p porange.color1
+p porange
+
 # As a developer, I can create three instances (objects) of class ColorPalette. (e.g green = ColorPalette.new)
 # As a developer, I can initialize each inistance of the class ColorPalette with three colors. (e.g. green = ColorPalette.new('Chartreuse', 'Kelly', 'Seafoam'))
 # As a developer, I can print the value of each individual color.
 # As a developer, I can create a method called all_colors that when called will print a sentence telling me the three colors of a given palette.
 # As a developer, I can change one or more colors of a given palette.
+
 # Animal Kingdom
 # As a developer, I can make an Animal (generic Animal class).
 # As a developer, upon initialization, I can give my Animal a status of alive, which will be set to true.
