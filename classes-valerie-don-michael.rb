@@ -64,12 +64,16 @@ class Animal
     def initialize
         @alive = true
         @age = 0
-
     end
     def grow
         @age +=1
     end
 
+    def age_check 
+        if @age == @max_age && @alive 
+            @alive = false
+        end
+    end
 end
 
 # As a developer, upon initialization, I can give my Animal a status of alive, which will be set to true.
@@ -95,19 +99,59 @@ class Salmon < Fish
         def initialize species
             super()
             @species = species
+            @max_age = 4
+        end
+        def salmon_status
+            p "This #{species} salmon is #{age} year(s) old and it is #{cold_blooded} that it is cold blooded."
         end
 end
 
 salmon1 = Salmon.new('Atlantic')
 p salmon1.cold_blooded
 
-# As a developer, I can initialize my Salmon to be a specific species (Atlantic, Sockeye, etc).
+salmon1.grow
+p salmon1.age
+salmon1.grow
+p salmon1.age
+salmon1.salmon_status
 
+salmon1.grow
+salmon1.grow
+salmon1.age_check 
+p salmon1.age
+p salmon1.alive
+
+
+
+# As a developer, I can initialize my Salmon to be a specific species (Atlantic, Sockeye, etc).
 # As a developer, I can see that my Salmon is cold-blooded.
 # As a developer, I can age my Salmon up.
 # As a developer, I can see a message that tells me all of my Salmon's information.
 # As a developer, if my Salmon reaches the ripe old age of 4, I can make it die peacefully after a full and happy life.
 # Hint: You will need a method that changes the status of alive in the initialize method of Animal.
+
+
+class Mammal < Animal
+    attr_accessor :warm_blooded
+    def initialize
+        super()
+        @warm_blooded = true
+    end
+end
+
+class Bear < Mammal
+    attr_accessor
+    def initialize
+        super()
+    end
+    
+end
+
+smokey_bear = Bear.new
+smokey_bear.grow
+p 
+
+
 # As a developer, I can create a Mammal that inherits from Animal.
 # As a developer, I can initialize all of my Mammals to be warm_blooded.
 # As a developer, I can create a Bear that inherits from Mammal.
