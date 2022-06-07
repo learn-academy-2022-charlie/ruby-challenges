@@ -34,6 +34,7 @@ code_challenges.complete_task
 
 # As a developer, I can create a class called ColorPalette.
 class ColorPalette
+    attr_accessor :color_one , :color_two , :color_three
 
     def initialize color_one_param, color_two_param, color_three_param
         @color_one = color_one_param
@@ -41,18 +42,74 @@ class ColorPalette
         @color_three = color_three_param
     end
 
+    def all_colors 
+        p "#{@color_one} , #{@color_two} , #{@color_three} "
+    end 
+
+    def new_colors(new_color_one , new_color_two, new_color_three)
+         if @color_one == @color_one
+            @color_one = new_color_one 
+            @color_two = new_color_two 
+            @color_three = new_color_three
+            p "#{@color_one} , #{@color_two} , #{@color_three} "
+
+         end 
+    end
+
 end
 # As a developer, I can create three instances (objects) of class ColorPalette. (e.g green = ColorPalette.new)
 green = ColorPalette.new 'Chartreuse', 'Kelly', 'Seafoam'
-orange = ColorPalette.new 
-blue = ColorPalette.new 
+orange = ColorPalette.new 'Peach', 'Champagne', 'Rust'
+blue = ColorPalette.new 'Cornflower', 'Spruce', 'Aegean'
 
 # As a developer, I can initialize each inistance of the class ColorPalette with three colors. (e.g. green = ColorPalette.new('Chartreuse', 'Kelly', 'Seafoam'))
+
 # As a developer, I can print the value of each individual color.
+p blue.color_one 
+
 # As a developer, I can create a method called all_colors that when called will print a sentence telling me the three colors of a given palette.
+green.all_colors
+
 # As a developer, I can change one or more colors of a given palette.
+green.new_colors 'red', 'purple', 'brown'
+p green
+
+
+
 # Animal Kingdom
 # As a developer, I can make an Animal (generic Animal class).
+class Animal 
+    attr_accessor :alive , :age
+    def initialize 
+        @alive = true
+        @age = 0 
+    end
+    def birthday
+        @age = @age +1 
+    end
+end          
+
+class Fish < Animal
+    attr_accessor :species
+    def initialize species_param
+        super 
+        @cold_blooded = true
+        @species = species_param
+    end
+end     
+
+# class Salmon < Fish 
+#     attr_accessor :alive , :age
+
+#     def initialize species_param 
+#         super 
+#         @species = species_param
+#     end 
+# end
+atlantic_salmon = Fish.new("atlantic salmon")
+
+p atlantic_salmon
+
 # As a developer, upon initialization, I can give my Animal a status of alive, which will be set to true.
 # As a developer, I can give my Animal an age of 0 upon creation.
 # As a developer, I can age my Animal up one year at a time.
@@ -61,7 +118,9 @@ blue = ColorPalette.new
 # As a developer, I can create a Fish that inherits from Animal.
 # As a developer, I can initialize all of my fish to be cold_blooded. (Yes, there is one fish who is technically fully warm-blooded but we aren't going to talk about that.)
 # As a developer, I can create a Salmon that inherits from Fish.
+
 # As a developer, I can initialize my Salmon to be a specific species (Atlantic, Sockeye, etc).
+
 # As a developer, I can see that my Salmon is cold-blooded.
 # As a developer, I can age my Salmon up.
 # As a developer, I can see a message that tells me all of my Salmon's information.
