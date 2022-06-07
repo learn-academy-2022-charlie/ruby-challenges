@@ -1,23 +1,23 @@
 # As a developer, I can create a class called Task.
-class Task
-    def initialize todo 
-        @title = todo
-        @status = 'incomplete'
-    end
+# class Task
+#     def initialize todo 
+#         @title = todo
+#         @status = 'incomplete'
+#     end
 
-    def get_title
-        p @title
-    end
+#     def get_title
+#         p @title
+#     end
 
-    def update_status
-        @status = 'complete'
-    end
-end
+#     def update_status
+#         @status = 'complete'
+#     end
+# end
 
-wash_dishes = Task.new('dishes')
-laundry = Task.new('laundry')
-mopping = Task.new('mopping')
-p wash_dishes
+# wash_dishes = Task.new('dishes')
+# laundry = Task.new('laundry')
+# mopping = Task.new('mopping')
+# p wash_dishes
 
 # As a developer, I can create three instances (objects) of class Task. (e.g laundry = Task.new)
 # As a developer, I can initialize each instance of class Task with a title.
@@ -28,27 +28,27 @@ p wash_dishes
 # For the following ColorPalette challenge use initialize and attr_accessor methods in your class
 # As a developer, I can create a class called ColorPalette.
 
-class ColorPalette
-    attr_accessor :color1, :color2, :color3
-    def initialize color1, color2, color3
-         @color1 = color1
-         @color2 = color2
-         @color3 = color3
-    end
+# class ColorPalette
+#     attr_accessor :color1, :color2, :color3
+#     def initialize color1, color2, color3
+#          @color1 = color1
+#          @color2 = color2
+#          @color3 = color3
+#     end
    
-end
+# end
 
-gurple = ColorPalette.new('green', 'purple', 'grape')
-porange = ColorPalette.new('porple', 'norange', 'sadness')
-yurgandy = ColorPalette.new('just', 'do', 'yellow')
+# gurple = ColorPalette.new('green', 'purple', 'grape')
+# porange = ColorPalette.new('porple', 'norange', 'sadness')
+# yurgandy = ColorPalette.new('just', 'do', 'yellow')
 
-p gurple.color1
-p gurple.color2
+# p gurple.color1
+# p gurple.color2
 
-porange.color1 = 'confused w/ purple'
+# porange.color1 = 'confused w/ purple'
 
-p porange.color1
-p porange
+# p porange.color1
+# p porange
 
 # As a developer, I can create three instances (objects) of class ColorPalette. (e.g green = ColorPalette.new)
 # As a developer, I can initialize each inistance of the class ColorPalette with three colors. (e.g. green = ColorPalette.new('Chartreuse', 'Kelly', 'Seafoam'))
@@ -58,15 +58,51 @@ p porange
 
 # Animal Kingdom
 # As a developer, I can make an Animal (generic Animal class).
+
+class Animal
+    attr_accessor :alive, :age
+    def initialize
+        @alive = true
+        @age = 0
+
+    end
+    def grow
+        @age +=1
+    end
+
+end
+
 # As a developer, upon initialization, I can give my Animal a status of alive, which will be set to true.
 # As a developer, I can give my Animal an age of 0 upon creation.
 # As a developer, I can age my Animal up one year at a time.
 # As a developer, I can return my Animal's age, as well as if they're alive.
 # Hint: Use attr_accessor as well as an initialize method.
 # As a developer, I can create a Fish that inherits from Animal.
+class Fish < Animal
+    attr_accessor :cold_blooded
+        def initialize
+            super()
+            @cold_blooded = true
+        end
+end
+
+
 # As a developer, I can initialize all of my fish to be cold_blooded. (Yes, there is one fish who is technically fully warm-blooded but we aren't going to talk about that.)
 # As a developer, I can create a Salmon that inherits from Fish.
+
+class Salmon < Fish
+    attr_accessor :species
+        def initialize species
+            super()
+            @species = species
+        end
+end
+
+salmon1 = Salmon.new('Atlantic')
+p salmon1.cold_blooded
+
 # As a developer, I can initialize my Salmon to be a specific species (Atlantic, Sockeye, etc).
+
 # As a developer, I can see that my Salmon is cold-blooded.
 # As a developer, I can age my Salmon up.
 # As a developer, I can see a message that tells me all of my Salmon's information.
