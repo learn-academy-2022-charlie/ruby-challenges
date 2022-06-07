@@ -99,3 +99,32 @@ p green.all_colors
 # Hint: Find out how the spaceship operator can help you with an array.
 # SUPER STRETCH: As a developer, I can utilize a Ruby module to help DRY up my code. I can create a swim method inside of my module that will apply to Animals who can swim. This method should return "I can swim!"
 # Hint: Look into module mix ins. Since not all animals can swim, only certain Animals will have access to this module.
+
+
+class Animal
+    attr_accessor :age, :alive, :cold_blooded, :species, 
+    
+    def initialize age 
+        @age = age
+        @alive = true
+        @cold_blooded = false
+    end
+    # def aging
+    #     @age += 1
+    # end
+    # def get_info
+    #     "This #{species} is"
+    # end
+
+end
+
+# class Fish < Animal
+   
+#     def initialize age, alive, species 
+#         super
+#         @cold_blooded = true
+#     end
+# end
+
+# salmon = Fish.new(1, true, 'atlantic')
+# p salmon
