@@ -80,12 +80,102 @@
 
 # #### For the following ColorPalette challenge use initialize and `attr_accessor` methods in your class
 # - As a developer, I can create a class called ColorPalette.
+# class  ColorPalette
+# end
 # - As a developer, I can create three instances (objects) of class ColorPalette. (e.g green = ColorPalette.new)
-# - As a developer, I can initialize each inistance of the class ColorPalette with three colors. (e.g. green = ColorPalette.new('Chartreuse', 'Kelly', 'Seafoam'))
-# - As a developer, I can print the value of each individual color.
-# - As a developer, I can create a method called `all_colors` that when called will print a sentence telling me the three colors of a given palette.
-# - As a developer, I can change one or more colors of a given palette.
+# class  ColorPalette
+# end
+# pink = ColorPalette.new
+# orange = ColorPalette.new
+# red = ColorPalette.new
+# p pink
+# p orange
+# p red
 
+# - As a developer, I can initialize each inistance of the class ColorPalette with three colors. (e.g. green = ColorPalette.new('Chartreuse', 'Kelly', 'Seafoam'))
+# class  ColorPalette
+#     def initialize color1, color2, color3
+#         @color1 = color1
+#         @color2 = color2
+#         @color3 = color3
+#     end
+# end
+
+# pink = ColorPalette.new('salmon','baby-pink','mavelous')
+# orange = ColorPalette.new('tangerine','rust','carrot')
+# red = ColorPalette.new('fire-engine','candy-apple','barn-red')
+# p pink
+# p orange
+# p red
+# - As a developer, I can print the value of each individual color.
+# class  ColorPalette
+#     attr_accessor :color1,:color2,:color3
+#     def initialize color1, color2, color3
+#         @color1 = color1
+#         @color2 = color2
+#         @color3 = color3
+#     end
+# end
+
+# pink = ColorPalette.new('salmon','baby-pink','mavelous')
+# orange = ColorPalette.new('tangerine','rust','carrot')
+# red = ColorPalette.new('fire-engine','candy-apple','barn-red')
+# p pink.color1
+# p orange.color2
+# p red.color3
+
+# - As a developer, I can create a method called `all_colors` that when called will print a sentence telling me the three colors of a given palette.
+# class  ColorPalette
+#     attr_accessor :color1,:color2,:color3
+#     def initialize color1, color2, color3
+#         @color1 = color1
+#         @color2 = color2
+#         @color3 = color3
+#     end
+#     def all_colors
+#         p "#{@color1}, #{@color2}, #{@color3}"
+
+#     end
+
+# end
+
+# pink = ColorPalette.new('salmon','baby-pink','mavelous')
+# orange = ColorPalette.new('tangerine','rust','carrot')
+# red = ColorPalette.new('fire-engine','candy-apple','barn-red')
+#  pink.all_colors
+#  orange.all_colors
+#  red.all_colors
+
+
+# - As a developer, I can change one or more colors of a given palette.
+class  ColorPalette
+    attr_accessor :color1,:color2,:color3
+    def initialize color1, color2, color3
+        @color1 = color1
+        @color2 = color2
+        @color3 = color3
+    end
+    def all_colors
+        p "#{@color1}, #{@color2}, #{@color3}"
+    end
+    def change_colors(color1 , color2 = @color2, color3 = @color3)
+        
+        @color1 = color1
+        @color2 = color2
+        @color3 = color3    
+    end
+
+end
+
+pink = ColorPalette.new('salmon','baby-pink','mavelous')
+orange = ColorPalette.new('tangerine','rust','carrot')
+red = ColorPalette.new('fire-engine','candy-apple','barn-red')
+  pink.change_colors 'pale-pink'
+ orange.change_colors 'ginger', 'tiger'
+  red.change_colors 'brick', 'apple', 'blood'
+p pink
+p orange
+p red
 # #### Animal Kingdom
 # - As a developer, I can make an Animal (generic Animal class).
 # - As a developer, upon initialization, I can give my Animal a status of `alive`, which will be set to true.
