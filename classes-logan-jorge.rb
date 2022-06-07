@@ -75,9 +75,9 @@ green = ColorPalette.new 'green', 'Chartreuse', 'Kelly', 'Seafoam'
 red = ColorPalette.new 'red', 'Maroon', 'Crimson', 'Blood'
 blue = ColorPalette.new 'blue', 'Ocean', 'Cerulean', 'Sky'
 
-p green.all_colors
-p red.all_colors
-p blue.all_colors
+# p green.all_colors
+# p red.all_colors
+# p blue.all_colors
 
     # green = ColorPalette.new
     # red = ColorPalette.new
@@ -102,21 +102,53 @@ end
 
 # As a developer, I can change one or more colors of a given palette.
 
-green.color1 = 'grass'
-green.color2 = 'neon'
-green.color3 = 'mint'
-p green.all_colors
+# green.color1 = 'grass'
+# green.color2 = 'neon'
+# green.color3 = 'mint'
+# p green.all_colors
 
 # Animal Kingdom
 # As a developer, I can make an Animal (generic Animal class).
+class Animal 
+    def initialize
+        @alive = true
+        @age = 0
+    end
+    def age_up
+        @age += 1
+    end
+end
+
+wolf = Animal.new
+wolf.age_up
+# p wolf
+
 # As a developer, upon initialization, I can give my Animal a status of alive, which will be set to true.
 # As a developer, I can give my Animal an age of 0 upon creation.
 # As a developer, I can age my Animal up one year at a time.
 # As a developer, I can return my Animal's age, as well as if they're alive.
 # Hint: Use attr_accessor as well as an initialize method.
 # As a developer, I can create a Fish that inherits from Animal.
+class Fish < Animal
+    def initialize
+        super
+        @cold_blooded = true
+    end
+end
+
+shark = Fish.new
+p shark
 # As a developer, I can initialize all of my fish to be cold_blooded. (Yes, there is one fish who is technically fully warm-blooded but we aren't going to talk about that.)
 # As a developer, I can create a Salmon that inherits from Fish.
+class Salmon < Fish
+    def initialize species
+        super
+        @species = species
+    end
+end
+
+atlantic_salmon = Salmon.new 'Atlantic'
+p atlantic_salmon
 # As a developer, I can initialize my Salmon to be a specific species (Atlantic, Sockeye, etc).
 # As a developer, I can see that my Salmon is cold-blooded.
 # As a developer, I can age my Salmon up.
