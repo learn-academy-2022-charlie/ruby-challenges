@@ -21,4 +21,8 @@ describe Task do
         expect{new_task.task_done}.to change{new_task.description}.from('in progress').to('done')
         # You can also use format like line 17 however you have to run the method before the expect statement.
     end
+    it 'creates a list of tasks' do
+      new_task=Task.new
+      expect{new_task.task_list 'laundry'}.to change{new_task.list}.from([]).to (['laundry'])
+    end
 end

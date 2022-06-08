@@ -7,16 +7,29 @@
 # User Stories
 # Story: As a developer, I can create a Task.
 class Task
-attr_accessor :title, :description
+attr_accessor :title, :description, :list
     def initialize description='in progress'
         @description = description
-        
+        @list = []
+
     end
     def task_done
         @description = 'done'
-        
+
     end
+
 end
+
+class TaskList < Task
+  def initialize
+    super()
+  end
+  def task_list chore
+    @list << chore
+  end
+end
+
+list = TaskList.new
 # Story: As a developer, I can give a Task a title and retrieve it.
 
 # Story: As a developer, I can give a Task a description and retrieve it.
@@ -26,6 +39,7 @@ end
 # Story: As a developer, when I print a Task that is done, its status is shown.
 
 # Story: As a developer, I can add all of my Tasks to a TaskList.
+
 
 # Story: As a developer with a TaskList, I can print the completed items.
 
@@ -39,4 +53,3 @@ end
 # Story: As a developer with a TaskList, I can list all the not completed items in order of due date.
 
 # Story: As a developer with a TaskList with and without due dates, I can list all the not completed items in order of due date, and then the items without due dates.
-
