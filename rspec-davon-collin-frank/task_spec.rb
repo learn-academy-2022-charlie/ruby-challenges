@@ -7,12 +7,18 @@ describe 'Task' do
     it 'create a new object with a task' do
         expect { Task.new }.not_to raise_error
     end 
-    # it 'has a title' do 
-    # my_task = Task.new
-    # my_task.title = 'trappin'
-    # expect(my_task.title).to be_a String 
-    # expect(my_task.title).to eq 'trappin' 
-    # end 
+    it 'has a title' do 
+    my_task = Task.new
+    my_task.title = 'trappin'
+    expect(my_task.title).to be_a String 
+    expect(my_task.title).to eq 'trappin' 
+    end 
+   it 'tells us when task is done' do
+   expect (my_task.status).to be_a String
+   expect(my_task.status).to eq 'done' 
+end
+end
+
 end 
 
 # For each story:

@@ -2,8 +2,8 @@
 
 class Task 
     attr_accessor :title 
-        def initialize status ='in progress'
-            @status = status 
+        def initialize status = 'in progress'
+            @status = status
             @title = title
         end 
         def completed_task status
