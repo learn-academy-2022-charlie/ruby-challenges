@@ -6,30 +6,34 @@
 # Then implement the class/method, with comments, so that it passes the tests one at a time
 # User Stories
 # Story: As a developer, I can create a Task.
+class TaskList 
+  attr_accessor :list
+    def initialize
+      @list = []
+    end
+    def task_list array
+      @list << array
+    end
+end
+
 class Task
-attr_accessor :title, :description, :list
-    def initialize description='in progress'
+  attr_accessor :title, :description
+      def initialize description='in progress'
         @description = description
-        @list = []
-
-    end
-    def task_done
+        @title = 'new task'
+      end
+      def task_done
         @description = 'done'
-
-    end
+      end
+      def list_format
+        [@title, @description]
+      end
 
 end
 
-class TaskList < Task
-  def initialize
-    super()
-  end
-  def task_list chore
-    @list << chore
-  end
-end
 
-list = TaskList.new
+
+
 # Story: As a developer, I can give a Task a title and retrieve it.
 
 # Story: As a developer, I can give a Task a description and retrieve it.

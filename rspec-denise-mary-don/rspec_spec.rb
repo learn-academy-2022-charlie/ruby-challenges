@@ -1,5 +1,6 @@
 require 'rspec'
 require_relative 'rspec'
+
 describe Task do
     it 'has to be real' do
         expect{Task.new}.to_not raise_error
@@ -22,7 +23,15 @@ describe Task do
         # You can also use format like line 17 however you have to run the method before the expect statement.
     end
     it 'creates a list of tasks' do
-      new_task=Task.new
-      expect{new_task.task_list 'laundry'}.to change{new_task.list}.from([]).to (['laundry'])
+        new_list = TaskList.new
+        new_task = Task.new
+        new_task.title = 'laundry'
+        
+        expect(new_list.task_list(new_task.list_format)).to eq([["laundry", "in progress"]])
     end
+    
 end
+
+# describe TaskList do
+
+# end
