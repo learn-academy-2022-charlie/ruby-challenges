@@ -26,9 +26,15 @@ describe 'Task' do
         expect(my_task.status).to eq 'completed'
     end
    it 'can add all of my Tasks to a TaskList' do
-    my_task = Task.new
-    my_task.list = []
-    expect(my_task.list).to be_a Array
-    expect(my_task.list).to eq []
+        laundry = Task.new
+        laundry.title = 'laundry'
+        laundry.desc = 'wash, dry, fold clothes'
+        dishes = Task.new 'completed'
+        dishes.title = 'dishes'
+        dishes.desc = 'wash and put away dishes'
+        task_list = TaskList.new 
+        task_list.add_task laundry
+        task_list.add_task dishes
+        expect(task_list)
    end
 end
