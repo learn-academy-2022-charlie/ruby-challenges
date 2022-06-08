@@ -14,6 +14,26 @@ describe 'Task' do
         expect(my_task.title).to be_a String
         expect(my_task.title).to eq 'Laundry'
     end
+
+    it 'has a description' do
+        my_task = Task.new
+        my_task.description = 'Put laundry in dryer'
+        expect(my_task.description).to be_a String        
+        expect(my_task.description).to eq 'Put laundry in dryer'
+    end
+
+    it 'can be marked done' do 
+        my_task = Task.new
+        expect(my_task.done).to be_a String
+        expect(my_task.done).to eq 'in progress'
+        expect{ my_task.do_task }.to change{ my_task.done }.from('in progress').to('complete')
+    end
+
+    describe 'when i print a task that is done the status is shown' do
+        my_task = Task.new
+        my_task.do_task
+        specify { expect{ my_task.status }.to output{my_task.done}.to_stdout }
+    end
 end
 
 # Write the test(s) that class/method tests must pass
