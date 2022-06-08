@@ -21,16 +21,22 @@ describe 'Task' do
         expect(painting.title).to be_a String
         expect(painting.title).to eq 'painting'
     end
+    it 'has a description' do
+        painting = Task.new
+        painting.description = 'paint the house blurange'
+        expect(painting.description).to be_a String
+        expect(painting.description).to eq 'paint the house blurange'
+    end
 end
 #--------------------------------------------------------------
 
 # Story: As a developer, I can create a Task.
     # 'Task' exists
 
-# >> Story: As a developer, I can give a Task a title and retrieve it.
+# Story: As a developer, I can give a Task a title and retrieve it.
     #
 
-# Story: As a developer, I can give a Task a description and retrieve it.
+# >> Story: As a developer, I can give a Task a description and retrieve it.
 
 # Story: As a developer, I can mark a Task done. Tasks should be initialized as 'in progress'.
 
