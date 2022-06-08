@@ -2,11 +2,12 @@
 # Story: As a developer, I can create a Task.
 
 class Task
-    attr_accessor :title, :desc, :status
+    attr_accessor :title, :desc, :status, :list
     def initialize status='in progress'
         @title = title
         @desc = desc
         @status = status
+        @list = list
 
     end
 end
